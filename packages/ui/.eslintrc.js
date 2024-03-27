@@ -6,5 +6,11 @@ module.exports = {
   parserOptions: {
     project: true,
   },
-  ignorePatterns: ['node_modules', 'dist', 'components/ui'],
+  ignorePatterns: [
+    'node_modules',
+    'dist',
+    'tailwind.config.ts',
+    'src/components/ui',
+    'src/lib/utils.ts',
+  ],
 }

@@ -23,6 +23,7 @@ module.exports = {
   plugins: ['only-warn', 'unused-imports', 'import', 'react-hooks'],
   rules: {
     '@next/next/no-img-element': 'off',
+    '@next/next/no-html-link-for-pages': 'off',
     'import/order': [
       'error',
       {

@@ -1,2 +1,2 @@
-packages/ui/components/ui
-packages/ui/lib/utils.ts
+packages/ui/src/components/ui
+packages/ui/src/lib/utils.ts
