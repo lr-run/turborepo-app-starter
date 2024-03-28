@@ -11,6 +11,6 @@ module.exports = {
     'node_modules',
     'dist',
     'src/__generated__',
-    'db/types.ts',
+    'src/db/types.ts',
   ],
 }

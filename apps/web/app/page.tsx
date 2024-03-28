@@ -4,7 +4,7 @@ import { client } from '@/lib/rpc'
 
 const Home: React.FC = async () => {
   const res = await client.workspaces.$get()
-  const { workspaces } = await res.json()
+  const { items: workspaces } = await res.json()
 
   return (
     <div className="flex h-screen flex-col items-center">

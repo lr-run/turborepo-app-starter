@@ -6,7 +6,7 @@
     "build": {
       "dependsOn": ["^build"],
       "outputs": ["dist/**", ".next/**", "!.next/cache/**"],
-      "env": ["DATABASE_URL", "RPC_BASE_URL"]
+      "env": ["DATABASE_URL", "RPC_BASE_URL", "PORT"]
     },
     "db:migrate": {
       "outputs": []
@@ -14,7 +14,7 @@
     "dev": {
       "cache": false,
       "persistent": true,
-      "env": ["DATABASE_URL", "RPC_BASE_URL"]
+      "env": ["DATABASE_URL", "RPC_BASE_URL", "PORT"]
     },
     "lint": {
       "dependsOn": ["^lint"]

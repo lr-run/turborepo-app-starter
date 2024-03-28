@@ -1,4 +1,5 @@
 import { PrismaClient } from '@prisma/client'
+
 import { MembershipFactory } from './factories'
 
 const prisma = new PrismaClient()
@@ -19,4 +20,4 @@ async function main() {
   }
 }
 
-main()
+await main()

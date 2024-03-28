@@ -13,16 +13,20 @@
     "lint": "eslint --ext js,ts,jsx,tsx --max-warnings=0 .",
     "lint:fix": "eslint --ext js,ts,jsx,tsx . --fix",
     "db:migrate": "prisma migrate dev",
-    "db:seed": "tsx scripts/seed.ts",
-    "db:generate": "prisma generate"
+    "db:seed": "tsx seed/seed.ts",
+    "db:generate": "prisma generate",
+    "test": "./scripts/run-tests.sh"
   },
   "dependencies": {
     "@hono/node-server": "^1.9.0",
+    "@hono/zod-validator": "^0.2.1",
     "@prisma/client": "^5.11.0",
     "dotenv": "^16.4.5",
     "hono": "^4.1.4",
     "kysely": "^0.27.3",
-    "pg": "^8.11.3"
+    "nanoid": "^5.0.6",
+    "pg": "^8.11.3",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@quramy/prisma-fabbrica": "^2.1.1",
@@ -35,6 +39,7 @@
     "prisma": "5.11.0",
     "prisma-kysely": "^1.8.0",
     "tsx": "^3.12.2",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "vitest": "^1.4.0"
   }
 }
