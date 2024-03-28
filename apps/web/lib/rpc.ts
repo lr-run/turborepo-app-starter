@@ -1,3 +1,7 @@
+import 'server-only'
+
+import { cookies } from 'next/headers'
+
 import dns from 'node:dns'
 
 import { createClient } from '@repo/server/rpc'
@@ -7,5 +11,21 @@ if (process.env.NODE_ENV !== 'production') {
   dns.setDefaultResultOrder('ipv4first')
 }
 
+const customFetch = async (
+  input: string | URL | globalThis.Request,
+  init?: RequestInit,
+) => {
+  const cookieStore = cookies()
+  return await fetch(input, {
+    ...init,
+    headers: {
+      ...init?.headers,
+      Authorization: `Bearer ${cookieStore.get('__session')?.value}`,
+    },
+  })
+}
+
 // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-export const client = createClient(process.env.RPC_BASE_URL!)
+export const client = createClient(process.env.RPC_BASE_URL!, {
+  fetch: customFetch,
+})

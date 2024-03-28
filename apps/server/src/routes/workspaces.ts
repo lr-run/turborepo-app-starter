@@ -6,6 +6,7 @@ import { db } from '../connection'
 
 export const workspacesRoute = new Hono()
   .get('/', async (c) => {
+
     const workspaces = await db
       .selectFrom('Workspace')
       .selectAll()

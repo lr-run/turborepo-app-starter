@@ -18,6 +18,8 @@
     "test": "./scripts/run-tests.sh"
   },
   "dependencies": {
+    "@clerk/backend": "^0.38.3",
+    "@hono/clerk-auth": "^1.0.1",
     "@hono/node-server": "^1.9.0",
     "@hono/zod-validator": "^0.2.1",
     "@prisma/client": "^5.11.0",

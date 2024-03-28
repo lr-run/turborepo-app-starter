@@ -1,3 +1,4 @@
+import { UserButton } from '@clerk/nextjs'
 import { Button } from '@repo/ui'
 
 import { client } from '@/lib/rpc'
@@ -8,6 +9,7 @@ const Home: React.FC = async () => {
 
   return (
     <div className="flex h-screen flex-col items-center">
+      <UserButton />
       <h1 className="pb-4 text-4xl">turborepo-app-starter</h1>
       <ul className="pb-8">
         {workspaces.map((workspace) => (

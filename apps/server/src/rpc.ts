@@ -1,7 +1,10 @@
-import { hc } from 'hono/client'
+import { hc, type ClientRequestOptions } from 'hono/client'
 
 import type { AppType } from './index'
 
-export const createClient = (baseUrl: string) => {
-  return hc<AppType>(baseUrl)
+export const createClient = (
+  baseUrl: string,
+  options: ClientRequestOptions,
+) => {
+  return hc<AppType>(baseUrl, options)
 }
