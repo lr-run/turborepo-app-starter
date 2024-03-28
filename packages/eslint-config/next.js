@@ -22,8 +22,6 @@ module.exports = {
   },
   plugins: ['only-warn', 'unused-imports', 'import', 'react-hooks'],
   rules: {
-    '@next/next/no-img-element': 'off',
-    '@next/next/no-html-link-for-pages': 'off',
     'import/order': [
       'error',
       {
@@ -78,11 +76,17 @@ module.exports = {
         },
       },
     ],
+    '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
+
+    // react
     'react/function-component-definition': [
       'error',
       { namedComponents: 'arrow-function' },
     ],
-    '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
+
+    // next
+    '@next/next/no-img-element': 'off',
+    '@next/next/no-html-link-for-pages': 'off',
 
     /// recoil
     'react-hooks/rules-of-hooks': 'error',
