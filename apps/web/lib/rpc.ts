@@ -4,7 +4,7 @@ import { cookies } from 'next/headers'
 
 import dns from 'node:dns'
 
-import { createClient } from '@repo/server/rpc'
+import { createClient } from '@lr/server/rpc'
 
 // https://stackoverflow.com/questions/73151551/can-nodejs-prefer-ipv6-dns-lookups-by-default
 if (process.env.NODE_ENV !== 'production') {

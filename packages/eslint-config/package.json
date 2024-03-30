@@ -1,9 +1,9 @@
 {
-  "name": "@repo/eslint-config",
+  "name": "@lr/eslint-config",
   "version": "0.0.0",
   "private": true,
   "files": [
-    "library.js",
+    "node.js",
     "next.js"
   ],
   "devDependencies": {

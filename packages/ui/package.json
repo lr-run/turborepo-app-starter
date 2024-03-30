@@ -1,5 +1,5 @@
 {
-  "name": "@repo/ui",
+  "name": "@lr/ui",
   "version": "0.0.0",
   "private": true,
   "exports": {
@@ -21,8 +21,8 @@
     "lint:fix": "eslint --ext js,ts,jsx,tsx . --fix"
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
+    "@lr/eslint-config": "workspace:*",
+    "@lr/typescript-config": "workspace:*",
     "@types/eslint": "^8.56.5",
     "@types/node": "^20.11.24",
     "@types/react": "^18.2.61",

@@ -1,9 +1,9 @@
 import Link from 'next/link'
 
 import { UserButton } from '@clerk/nextjs'
-import { Button } from '@repo/ui/button'
-import { Card, CardContent, CardHeader, CardTitle } from '@repo/ui/card'
-import { Sheet, SheetContent, SheetTrigger } from '@repo/ui/sheet'
+import { Button } from '@lr/ui/button'
+import { Card, CardContent, CardHeader, CardTitle } from '@lr/ui/card'
+import { Sheet, SheetContent, SheetTrigger } from '@lr/ui/sheet'
 import {
   Table,
   TableBody,
@@ -11,7 +11,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from '@repo/ui/table'
+} from '@lr/ui/table'
 import { Menu, Package2 } from 'lucide-react'
 
 import { client } from '@/lib/rpc'

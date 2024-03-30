@@ -5,8 +5,8 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 
 import { zodResolver } from '@hookform/resolvers/zod'
-import type { Workspace } from '@repo/server/types'
-import { Button } from '@repo/ui/button'
+import type { Workspace } from '@lr/server/types'
+import { Button } from '@lr/ui/button'
 import {
   Dialog,
   DialogContent,
@@ -14,7 +14,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from '@repo/ui/dialog'
+} from '@lr/ui/dialog'
 import {
   Form,
   FormControl,
@@ -22,8 +22,8 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '@repo/ui/form'
-import { Input } from '@repo/ui/input'
+} from '@lr/ui/form'
+import { Input } from '@lr/ui/input'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 

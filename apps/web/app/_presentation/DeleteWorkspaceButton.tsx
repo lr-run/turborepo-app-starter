@@ -4,7 +4,7 @@ import { useState } from 'react'
 
 import { useRouter } from 'next/navigation'
 
-import type { Workspace } from '@repo/server/types'
+import type { Workspace } from '@lr/server/types'
 import {
   AlertDialog,
   AlertDialogAction,
@@ -15,8 +15,8 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from '@repo/ui/alert-dialog'
-import { Button } from '@repo/ui/button'
+} from '@lr/ui/alert-dialog'
+import { Button } from '@lr/ui/button'
 
 import { useRpc } from '@/lib/rpc-client'
 
@@ -46,7 +46,10 @@ export const DeleteWorkspaceButton: React.FC<Props> = ({ workspace }) => {
       </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertDialogTitle>{`Are you sure to delete workpace ${workspace.name}?`}</AlertDialogTitle>
+          <AlertDialogTitle>
+            {`Are you sure to delete workpace `}
+            <u className="underline">{workspace.name}</u>?
+          </AlertDialogTitle>
           <AlertDialogDescription>
             This action cannot be undone.
           </AlertDialogDescription>

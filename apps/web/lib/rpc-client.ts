@@ -1,5 +1,5 @@
 import { useAuth } from '@clerk/nextjs'
-import { createClient } from '@repo/server/rpc'
+import { createClient } from '@lr/server/rpc'
 
 export const useRpc = () => {
   const { getToken } = useAuth()
