@@ -1,5 +1,5 @@
 {
-  "name": "turborepo-app-starter",
+  "name": "lr-inc",
   "private": true,
   "scripts": {
     "build": "turbo build",
