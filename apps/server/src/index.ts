@@ -4,7 +4,7 @@ import { Hono } from 'hono'
 import { cors } from 'hono/cors'
 import { logger } from 'hono/logger'
 
-import { workspacesRoute } from './routes/workspaces'
+import { workspaceRoute } from './routes/workspace'
 
 import 'dotenv/config'
 
@@ -28,7 +28,7 @@ app.use('*', async (c, next) => {
   await next()
 })
 
-const routes = app.route('/workspaces', workspacesRoute)
+const routes = app.route('/workspaces', workspaceRoute)
 
 export type AppType = typeof routes
 

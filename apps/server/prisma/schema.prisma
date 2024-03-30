@@ -22,24 +22,12 @@ generator kysely {
     enumFileName = "enums.ts"
 }
 
-model Membership {
-    id          String    @id @db.VarChar(30)
-    user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
-    userId      String    @db.VarChar(30)
-    workspace   Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
-    workspaceId String    @db.VarChar(30)
-
-    @@unique([userId, workspaceId])
-}
-
 model User {
-    id          String       @id @db.VarChar(30)
-    memberships Membership[]
+    id String @id @db.VarChar(30)
 }
 
 model Workspace {
-    id    String       @id @db.VarChar(30)
-    name  String       @db.VarChar(255)
-    slug  String       @unique @db.VarChar(255)
-    users Membership[]
+    id   String @id @db.VarChar(30)
+    name String @db.VarChar(255)
+    slug String @unique @db.VarChar(255)
 }

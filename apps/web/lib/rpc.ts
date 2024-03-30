@@ -21,11 +21,12 @@ const customFetch = async (
     headers: {
       ...init?.headers,
       Authorization: `Bearer ${cookieStore.get('__session')?.value}`,
+      'Content-Type': 'application/json',
     },
   })
 }
 
 // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-export const client = createClient(process.env.RPC_BASE_URL!, {
+export const client = createClient(process.env.NEXT_PUBLIC_RPC_BASE_URL!, {
   fetch: customFetch,
 })

@@ -5,11 +5,6 @@ export type Generated<T> =
     : ColumnType<T, T | undefined, T>
 export type Timestamp = ColumnType<Date, Date | string, Date | string>
 
-export type Membership = {
-  id: string
-  userId: string
-  workspaceId: string
-}
 export type User = {
   id: string
 }
@@ -19,7 +14,6 @@ export type Workspace = {
   slug: string
 }
 export type DB = {
-  Membership: Membership
   User: User
   Workspace: Workspace
 }

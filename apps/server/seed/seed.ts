@@ -1,6 +1,6 @@
 import { PrismaClient } from '@prisma/client'
 
-import { MembershipFactory } from './factories'
+import { WorkspaceFactory } from './factories'
 
 const prisma = new PrismaClient()
 
@@ -11,8 +11,8 @@ const times = (v: number) =>
 
 async function main() {
   for (const i of times(10)) {
-    const data = await MembershipFactory.build()
-    await prisma.membership.upsert({
+    const data = await WorkspaceFactory.build()
+    await prisma.workspace.upsert({
       where: { id: `${i + 1}` },
       create: data,
       update: data,
