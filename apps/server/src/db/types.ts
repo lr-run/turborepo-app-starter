@@ -7,6 +7,9 @@ export type Timestamp = ColumnType<Date, Date | string, Date | string>
 
 export type User = {
   id: string
+  email: string
+  emailVerified: Generated<boolean>
+  clerkId: string
 }
 export type Workspace = {
   id: string

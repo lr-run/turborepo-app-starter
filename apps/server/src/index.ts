@@ -1,9 +1,10 @@
-import { clerkMiddleware, getAuth } from '@hono/clerk-auth'
+import { clerkMiddleware } from '@hono/clerk-auth'
 import { serve } from '@hono/node-server'
 import { Hono } from 'hono'
 import { cors } from 'hono/cors'
 import { logger } from 'hono/logger'
 
+import { protectedMiddleware } from './middlewares/protected'
 import { workspaceRoute } from './routes/workspace'
 
 import 'dotenv/config'
@@ -14,19 +15,7 @@ app.use(logger())
 app.use('/*', cors())
 
 app.use('*', clerkMiddleware())
-app.use('*', async (c, next) => {
-  const auth = getAuth(c)
-  if (!auth?.userId) {
-    return c.json(
-      {
-        message: 'Unauthorized.',
-      },
-      401,
-    )
-  }
-
-  await next()
-})
+app.use('*', protectedMiddleware())
 
 const routes = app.route('/workspaces', workspaceRoute)
 

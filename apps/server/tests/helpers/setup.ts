@@ -20,6 +20,8 @@ vi.mock('@hono/clerk-auth', () => {
   }
 })
 
+vi.mock('../../src/clerk.ts')
+
 beforeEach(async () => {
   await resetDb()
   vi.restoreAllMocks()

@@ -25,10 +25,15 @@ const modelFieldDefinitions: ModelWithFields[] = [{
 
 type UserScalarOrEnumFields = {
     id: string;
+    email: string;
+    clerkId: string;
 };
 
 type UserFactoryDefineInput = {
     id?: string;
+    email?: string;
+    emailVerified?: boolean;
+    clerkId?: string;
 };
 
 type UserFactoryDefineOptions = {
@@ -61,7 +66,9 @@ function autoGenerateUserScalarsOrEnums({ seq }: {
     readonly seq: number;
 }): UserScalarOrEnumFields {
     return {
-        id: getScalarFieldValueGenerator().String({ modelName: "User", fieldName: "id", isId: true, isUnique: false, seq })
+        id: getScalarFieldValueGenerator().String({ modelName: "User", fieldName: "id", isId: true, isUnique: false, seq }),
+        email: getScalarFieldValueGenerator().String({ modelName: "User", fieldName: "email", isId: false, isUnique: true, seq }),
+        clerkId: getScalarFieldValueGenerator().String({ modelName: "User", fieldName: "clerkId", isId: false, isUnique: true, seq })
     };
 }
 
