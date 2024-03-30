@@ -41,7 +41,7 @@
     "eslint": "^8.57.0",
     "prisma": "5.11.0",
     "prisma-kysely": "^1.8.0",
-    "tsx": "^3.12.2",
+    "tsx": "^4.0.0",
     "typescript": "^5.3.3",
     "vitest": "^1.4.0"
   }
