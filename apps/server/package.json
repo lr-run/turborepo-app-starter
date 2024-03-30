@@ -16,7 +16,8 @@
     "db:migrate": "prisma migrate dev",
     "db:seed": "tsx seed/seed.ts",
     "db:generate": "prisma generate",
-    "test": "./scripts/run-tests.sh"
+    "test": "./scripts/run-tests.sh",
+    "test:ci": "vitest run"
   },
   "dependencies": {
     "@clerk/backend": "^0.38.3",

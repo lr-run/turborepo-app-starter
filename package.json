@@ -9,6 +9,7 @@
     "format": "prettier --check \"**/*.{js,ts,jsx,tsx}\"",
     "format:fix": "prettier --write \"**/*.{js,ts,jsx,tsx}\"",
     "test": "turbo test",
+    "test:ci": "turbo test:ci",
     "db:migrate": "turbo db:migrate"
   },
   "devDependencies": {

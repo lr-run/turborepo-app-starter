@@ -22,8 +22,7 @@
     "lint:fix": {
       "dependsOn": ["^lint:fix"]
     },
-    "test": {
-      "dependsOn": ["^test"]
-    }
+    "test": {},
+    "test:ci": {}
   }
 }
