@@ -1,0 +1,50 @@
+{
+  "name": "@lr/server",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./rpc": "./src/rpc.ts",
+    "./types": "./src/types.ts"
+  },
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc --build",
+    "start": "node dist/index.js",
+    "lint": "eslint --ext js,ts,jsx,tsx --max-warnings=0 .",
+    "lint:fix": "eslint --ext js,ts,jsx,tsx . --fix",
+    "db:migrate": "prisma migrate dev",
+    "db:seed": "tsx seed/seed.ts",
+    "db:generate": "prisma generate",
+    "test": "./scripts/run-tests.sh",
+    "test:ci": "vitest run"
+  },
+  "dependencies": {
+    "@clerk/backend": "^0.38.3",
+    "@hono/clerk-auth": "^1.0.1",
+    "@hono/node-server": "^1.9.0",
+    "@hono/zod-validator": "^0.2.1",
+    "@prisma/client": "^5.11.0",
+    "dotenv": "^16.4.5",
+    "hono": "^4.1.4",
+    "inngest": "^3.16.1",
+    "kysely": "^0.27.3",
+    "nanoid": "^5.0.6",
+    "pg": "^8.11.3",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@lr/eslint-config": "workspace:*",
+    "@lr/typescript-config": "workspace:*",
+    "@quramy/prisma-fabbrica": "^2.1.1",
+    "@types/eslint": "^8.56.5",
+    "@types/node": "^20.11.24",
+    "@types/pg": "^8.11.4",
+    "eslint": "^8.57.0",
+    "prisma": "5.11.0",
+    "prisma-kysely": "^1.8.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.3.3",
+    "vitest": "^1.4.0"
+  }
+}

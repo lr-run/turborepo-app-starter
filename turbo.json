@@ -1,17 +1,28 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "globalDependencies": ["**/.env.*local"],
+  "globalEnv": ["NODE_ENV"],
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".next/**", "!.next/cache/**"]
+      "outputs": ["dist/**", ".next/**", "!.next/cache/**"],
+      "env": ["DATABASE_URL", "NEXT_PUBLIC_RPC_BASE_URL", "PORT"]
+    },
+    "db:migrate": {
+      "outputs": []
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true,
+      "env": ["DATABASE_URL", "NEXT_PUBLIC_RPC_BASE_URL", "PORT"]
     },
     "lint": {
       "dependsOn": ["^lint"]
     },
-    "dev": {
-      "cache": false,
-      "persistent": true
-    }
+    "lint:fix": {
+      "dependsOn": ["^lint:fix"]
+    },
+    "test": {},
+    "test:ci": {}
   }
 }

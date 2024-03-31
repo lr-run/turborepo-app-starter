@@ -1,6 +1,10 @@
 {
-  "extends": "@repo/typescript-config/react-library.json",
+  "extends": "@lr/typescript-config/nextjs.json",
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./*"]
+    },
     "outDir": "dist"
   },
   "include": ["src"],
