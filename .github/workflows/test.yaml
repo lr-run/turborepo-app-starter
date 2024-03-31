@@ -52,16 +52,17 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      # Needd to run migrations before lint since prisma generates code here
+      - name: Migrate
+        run: pnpm run db:migrate
+        env:
+          DATABASE_URL: postgresql://postgres:postgres@localhost:5432/app
+
       - name: Lint
         run: pnpm run lint
 
       - name: Format
         run: pnpm run format
-
-      - name: Migrate
-        run: pnpm run db:migrate
-        env:
-          DATABASE_URL: postgresql://postgres:postgres@localhost:5432/app
 
       - name: Test
         run: pnpm run test:ci
