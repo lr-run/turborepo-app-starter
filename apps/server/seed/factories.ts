@@ -7,8 +7,8 @@ export const UserFactory = defineUserFactory({})
 
 export const WorkspaceFactory = defineWorkspaceFactory({
   defaultData: ({ seq }) => ({
-    id: `${seq + 1}`,
-    slug: `workspace-${seq + 1}`,
-    name: `Workspace ${seq + 1}`,
+    id: (seq + 1).toString(),
+    slug: `workspace-${(seq + 1).toString()}`,
+    name: `Workspace ${(seq + 1).toString()}`,
   }),
 })

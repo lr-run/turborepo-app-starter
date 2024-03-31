@@ -22,7 +22,7 @@ const routes = app.route('/workspaces', workspaceRoute)
 export type AppType = typeof routes
 
 const port = process.env.PORT != null ? parseInt(process.env.PORT, 10) : 8000
-console.log(`Server is running on port ${port}`)
+console.log(`Server is running on port ${port.toString()}`)
 
 serve({
   fetch: app.fetch,

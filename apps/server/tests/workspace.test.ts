@@ -8,13 +8,14 @@ import { app } from '../src/index'
 describe('/workspaces', () => {
   beforeEach(async () => {
     for (let i = 0; i < 10; i++) {
+      const id = (i + 1).toString()
       const data = await WorkspaceFactory.build({
-        id: `${i + 1}`,
-        slug: `workspace-${i + 1}`,
-        name: `Workspace ${i + 1}`,
+        id,
+        slug: `workspace-${id}`,
+        name: `Workspace ${id}`,
       })
       await prisma.workspace.upsert({
-        where: { id: `${i + 1}` },
+        where: { id },
         create: data,
         update: data,
       })

@@ -12,7 +12,7 @@ export const useRpc = () => {
       ...init,
       headers: {
         ...init?.headers,
-        Authorization: `Bearer ${await getToken()}`,
+        Authorization: `Bearer ${(await getToken()) ?? ''}`,
         'Content-Type': 'application/json',
       },
     })

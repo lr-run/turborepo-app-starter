@@ -20,7 +20,7 @@ const customFetch = async (
     ...init,
     headers: {
       ...init?.headers,
-      Authorization: `Bearer ${cookieStore.get('__session')?.value}`,
+      Authorization: `Bearer ${cookieStore.get('__session')?.value ?? ''}`,
       'Content-Type': 'application/json',
     },
   })
