@@ -28,7 +28,7 @@ importers:
         version: 1.0.1(@clerk/backend@0.38.3)(hono@4.1.6)
       '@hono/node-server':
         specifier: ^1.9.0
-        version: 1.9.1
+        version: 1.10.0
       '@hono/zod-validator':
         specifier: ^0.2.1
         version: 0.2.1(hono@4.1.6)(zod@3.22.4)
@@ -1110,8 +1110,8 @@ packages:
       hono: 4.1.6
     dev: false
 
-  /@hono/node-server@1.9.1:
-    resolution: {integrity: sha512-XBru0xbtRlTZJyAiFJLn7XDKbCVXBaRhVQAQhB9TwND2gwj8jf9SDWIj/7VxVtNAjURJf7Ofcz58DRA6DPYiWA==}
+  /@hono/node-server@1.10.0:
+    resolution: {integrity: sha512-XXFmIT4swUm3gG9yPU/HMAqHAHTP/Wr2mqgJakOFQhbbWipomaLu7ys0h9KrgF9032j18efBYk2aHz2SfgDbTA==}
     engines: {node: '>=18.14.1'}
     dev: false
 
