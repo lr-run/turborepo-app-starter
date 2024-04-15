@@ -41,7 +41,7 @@
     "@types/node": "^20.11.24",
     "@types/pg": "^8.11.4",
     "eslint": "^8.57.0",
-    "prisma": "5.11.0",
+    "prisma": "5.12.1",
     "prisma-kysely": "^1.8.0",
     "tsx": "^4.0.0",
     "typescript": "^5.3.3",
