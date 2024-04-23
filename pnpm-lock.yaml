@@ -25,13 +25,13 @@ importers:
         version: 0.38.6(react@18.2.0)
       '@hono/clerk-auth':
         specifier: ^1.0.1
-        version: 1.0.1(@clerk/backend@0.38.6)(hono@4.2.4)
+        version: 1.0.1(@clerk/backend@0.38.6)(hono@4.2.7)
       '@hono/node-server':
-        specifier: ^1.9.0
-        version: 1.10.0
+        specifier: ^1.10.1
+        version: 1.10.1
       '@hono/zod-validator':
         specifier: ^0.2.1
-        version: 0.2.1(hono@4.2.4)(zod@3.22.4)
+        version: 0.2.1(hono@4.2.7)(zod@3.22.4)
       '@prisma/client':
         specifier: ^5.11.0
         version: 5.12.1(prisma@5.12.1)
@@ -39,8 +39,8 @@ importers:
         specifier: ^16.4.5
         version: 16.4.5
       hono:
-        specifier: ^4.1.4
-        version: 4.2.4
+        specifier: ^4.2.7
+        version: 4.2.7
       inngest:
         specifier: ^3.16.1
         version: 3.16.1(typescript@5.4.5)
@@ -1100,28 +1100,28 @@ packages:
     resolution: {integrity: sha512-9TANp6GPoMtYzQdt54kfAyMmz1+osLlXdg2ENroU7zzrtflTLrrC/lgrIfaSe+Wu0b89GKccT7vxXA0MoAIO+Q==}
     dev: false
 
-  /@hono/clerk-auth@1.0.1(@clerk/backend@0.38.6)(hono@4.2.4):
+  /@hono/clerk-auth@1.0.1(@clerk/backend@0.38.6)(hono@4.2.7):
     resolution: {integrity: sha512-VGctaUW/PUtlIByz/5Ep3u6aUP6Si5e89zO8ob55JslTcQ3Y+dr4VDdk2OJeZRuD3WaODwrEDLaMRkLeO8kP4g==}
     peerDependencies:
       '@clerk/backend': 0.30.*
       hono: '>=3.*'
     dependencies:
       '@clerk/backend': 0.38.6(react@18.2.0)
-      hono: 4.2.4
+      hono: 4.2.7
     dev: false
 
-  /@hono/node-server@1.10.0:
-    resolution: {integrity: sha512-XXFmIT4swUm3gG9yPU/HMAqHAHTP/Wr2mqgJakOFQhbbWipomaLu7ys0h9KrgF9032j18efBYk2aHz2SfgDbTA==}
+  /@hono/node-server@1.10.1:
+    resolution: {integrity: sha512-5BKW25JH5PQKPDkTcIgv3yNUPtOAbnnjFFgWvIxxAY/B/ZNeYjjWoAeDmqhIiCgOAJ3Tauuw+0G+VainhuZRYQ==}
     engines: {node: '>=18.14.1'}
     dev: false
 
-  /@hono/zod-validator@0.2.1(hono@4.2.4)(zod@3.22.4):
+  /@hono/zod-validator@0.2.1(hono@4.2.7)(zod@3.22.4):
     resolution: {integrity: sha512-HFoxln7Q6JsE64qz2WBS28SD33UB2alp3aRKmcWnNLDzEL1BLsWfbdX6e1HIiUprHYTIXf5y7ax8eYidKUwyaA==}
     peerDependencies:
       hono: '>=3.9.0'
       zod: ^3.19.1
     dependencies:
-      hono: 4.2.4
+      hono: 4.2.7
       zod: 3.22.4
     dev: false
 
@@ -5191,8 +5191,8 @@ packages:
     dependencies:
       function-bind: 1.1.2
 
-  /hono@4.2.4:
-    resolution: {integrity: sha512-2T5Ahxh8tT0ISKCrNeA+OIwfD5W4EZ00iIMYBBCuiIivr+sOrZYOphinARSG7wL3nFsY6zkFHMMZbcR9CzEzug==}
+  /hono@4.2.7:
+    resolution: {integrity: sha512-k1xHi86tJnRIVvqhFMBDGFKJ8r5O+bEsT4P59ZK59r0F300Xd910/r237inVfuT/VmE86RQQffX4OYNda6dLXw==}
     engines: {node: '>=16.0.0'}
     dev: false
 
