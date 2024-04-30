@@ -10,7 +10,6 @@
     "format:fix": "prettier --write \"**/*.{js,ts,jsx,tsx}\"",
     "test": "turbo test",
     "test:ci": "turbo test:ci",
-    "db:migrate": "turbo db:migrate",
     "inngest": "pnpm dlx inngest-cli@latest dev --no-discovery -u http://localhost:8000/inngest"
   },
   "devDependencies": {
