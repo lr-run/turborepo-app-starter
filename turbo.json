@@ -1,6 +1,6 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "globalDependencies": ["**/.env.*local"],
+  "globalDependencies": ["**/.env.*local", "**/.env"],
   "globalEnv": ["NODE_ENV"],
   "pipeline": {
     "build": {
@@ -9,7 +9,7 @@
       "env": ["DATABASE_URL", "NEXT_PUBLIC_RPC_BASE_URL", "PORT"]
     },
     "db:migrate": {
-      "outputs": []
+      "env": ["DATABASE_URL"]
     },
     "dev": {
       "cache": false,
