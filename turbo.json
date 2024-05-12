@@ -9,7 +9,9 @@
       "env": ["DATABASE_URL", "NEXT_PUBLIC_RPC_BASE_URL", "PORT"]
     },
     "db:migrate": {
-      "outputs": []
+      "interactive": true,
+      "cache": false,
+      "env": ["DATABASE_URL"]
     },
     "dev": {
       "cache": false,
@@ -24,5 +26,6 @@
     },
     "test": {},
     "test:ci": {}
-  }
+  },
+  "experimentalUI": true
 }
