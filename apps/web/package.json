@@ -10,7 +10,7 @@
     "lint:fix": "eslint --ext js,ts,jsx,tsx . --fix"
   },
   "dependencies": {
-    "@clerk/nextjs": "^4.29.9",
+    "@clerk/nextjs": "^5.1.2",
     "@hookform/resolvers": "^3.3.4",
     "@lr/server": "workspace:*",
     "@lr/ui": "workspace:*",

@@ -1,6 +1,5 @@
-import { PrismaClient } from '@prisma/client'
-
 import { WorkspaceFactory } from './factories'
+import { PrismaClient } from '../src/__generated__/client'
 
 const prisma = new PrismaClient()
 
@@ -20,4 +19,5 @@ async function main() {
   }
 }
 
-await main()
+// eslint-disable-next-line @typescript-eslint/no-floating-promises
+main()

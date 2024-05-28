@@ -1,0 +1,37 @@
+generator client {
+    provider = "prisma-client-js"
+    output   = "../src/__generated__/client"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+generator fabbrica {
+    provider    = "prisma-fabbrica"
+    output      = "../src/__generated__/fabbrica"
+    tsconfig    = "../tsconfig.json"
+    noTranspile = true
+}
+
+generator kysely {
+    provider = "prisma-kysely"
+
+    output       = "../src/db"
+    fileName     = "types.ts"
+    enumFileName = "enums.ts"
+}
+
+model User {
+    id            String  @id @db.VarChar(30)
+    email         String  @unique @db.VarChar(255)
+    emailVerified Boolean @default(false)
+    clerkId       String  @unique @db.VarChar(100)
+}
+
+model Workspace {
+    id   String @id @db.VarChar(30)
+    name String @db.VarChar(255)
+    slug String @unique @db.VarChar(255)
+}
