@@ -1,11 +1,14 @@
 import type { Clerk } from '@clerk/backend'
 
+import { genId } from './models/utils'
+
 export const getUserInfo = async (
   clerkClient: ReturnType<typeof Clerk>,
   clerkId: string,
 ) => {
   const clerkUser = await clerkClient.users.getUser(clerkId)
   return {
+    id: genId(),
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     email: clerkUser.emailAddresses.find(
       (emailAddress) => emailAddress.id === clerkUser.primaryEmailAddressId,

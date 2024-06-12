@@ -1,41 +1,21 @@
-import { z } from 'zod'
+import { gmy } from 'gummy'
+import type { z } from 'zod'
 
-import { genId } from './utils'
 import { db } from '../connection'
+import { User } from '../db/types'
 
-export const userSchema = z.object({
-  id: z.string(),
-  email: z.string(),
-  emailVerified: z.boolean(),
-  clerkId: z.string(),
-})
+export const userSchema = gmy.createSelectSchema(User)
+export type UserSchema = z.infer<typeof userSchema>
 
-export type User = z.infer<typeof userSchema>
-
-export const createUserSchema = z.object({
-  email: z.string(),
-  emailVerified: z.boolean(),
-  clerkId: z.string(),
-})
-
-export type CreateUser = z.infer<typeof createUserSchema>
-
-export const updateUserSchema = z.object({
-  email: z.string(),
-  emailVerified: z.boolean(),
-})
-
-export type UpdateUser = z.infer<typeof updateUserSchema>
+export const createUserSchema = gmy.createInsertSchema(User)
+export type CreateUserSchema = z.infer<typeof createUserSchema>
 
 export const createOrGetUserByClerkId = async (
-  data: CreateUser,
-): Promise<{ user: User; created: boolean }> => {
+  data: CreateUserSchema
+): Promise<{ user: UserSchema; created: boolean }> => {
   const user = await db
     .insertInto('User')
-    .values({
-      ...data,
-      id: genId(),
-    })
+    .values(data)
     .onConflict((oc) => oc.column('clerkId').doNothing())
     .returningAll()
     .executeTakeFirst()
@@ -43,7 +23,7 @@ export const createOrGetUserByClerkId = async (
   if (user) {
     return {
       user,
-      created: true,
+      created: true
     }
   }
 
@@ -53,13 +33,13 @@ export const createOrGetUserByClerkId = async (
       .selectAll()
       .where('clerkId', '=', data.clerkId)
       .executeTakeFirstOrThrow(),
-    created: false,
+    created: false
   }
 }
 
 export const getUserByClerkIdOrUndefined = async (
-  clerkId: string,
-): Promise<User | undefined> => {
+  clerkId: string
+): Promise<UserSchema | undefined> => {
   const users = await db
     .selectFrom('User')
     .selectAll()
@@ -69,19 +49,16 @@ export const getUserByClerkIdOrUndefined = async (
 }
 
 export const createOrUpdateUserByClerkId = async (
-  data: CreateUser,
-): Promise<User> => {
+  data: CreateUserSchema
+): Promise<UserSchema> => {
   return await db
     .insertInto('User')
-    .values({
-      ...data,
-      id: genId(),
-    })
+    .values(data)
     .onConflict((oc) =>
       oc.column('clerkId').doUpdateSet({
         email: (eb) => eb.ref('excluded.email'),
-        emailVerified: (eb) => eb.ref('excluded.emailVerified'),
-      }),
+        emailVerified: (eb) => eb.ref('excluded.emailVerified')
+      })
     )
     .returningAll()
     .executeTakeFirstOrThrow()

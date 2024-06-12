@@ -1,6 +1,7 @@
 import type { UserJSON } from '@clerk/backend'
 
 import { createOrUpdateUserByClerkId } from '../../models/user'
+import { genId } from '../../models/utils'
 import { inngest } from '../client'
 
 export const syncUser = async (event: { data: UserJSON }) => {
@@ -12,6 +13,7 @@ export const syncUser = async (event: { data: UserJSON }) => {
   )!.email_address
 
   return await createOrUpdateUserByClerkId({
+    id: genId(),
     clerkId: id,
     email,
     emailVerified: true,
