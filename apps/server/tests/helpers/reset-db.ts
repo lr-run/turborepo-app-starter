@@ -1,13 +1,13 @@
-import { PrismaClient } from '@prisma/client'
-
-const prisma = new PrismaClient()
+import prisma from './prisma'
 
 export default async () => {
   console.log('---------------------- reset-db ----------------------')
 
   const tablenames = await prisma.$queryRaw<
     { tablename: string }[]
-  >`SELECT tablename FROM pg_tables WHERE schemaname='public'`
+  >`SELECT tablename
+    FROM pg_tables
+    WHERE schemaname = 'public'`
 
   const tables = tablenames
     .map(({ tablename }) => tablename)
